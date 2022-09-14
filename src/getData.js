@@ -8,11 +8,10 @@ const getData = async (userId) => {
   const postsResponse = await axios.get(
     `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
   );
-  let user = { user: userResponse.data };
   let posts = { posts: postsResponse.data };
 
-  console.log({ ...user, ...posts });
-  return { ...user, ...posts };
+  console.log({ ...userResponse.data, ...posts });
+  return { ...userResponse.data, ...posts };
 };
 
 export default getData;
